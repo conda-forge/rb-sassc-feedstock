@@ -10,10 +10,9 @@ source:
   sha256: 6e7e4fe5eae9593c29e5dd6c830b91530b92e044b3d3efa89898fca22a75119d
 
 build:
-  noarch: generic
-  number: 0
+  number: 1
   script:
-    - gem install --norc -l -V --ignore-dependencies {{ name }}-{{ version }}.gem
+    - gem install -N -l -V --norc --ignore-dependencies {{ name }}-{{ version }}.gem
     - gem unpack {{ name }}-{{ version }}.gem
     - make -C {{ PREFIX }}/lib/ruby/gems/{{ ruby }}.0/gems/{{ name }}-{{ version }}/ext clean
   skip: {{ win }}
