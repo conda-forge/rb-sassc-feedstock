@@ -1,5 +1,5 @@
 {% set name = "sassc" %}
-{% set version = "2.2.0" %}
+{% set version = "2.2.1" %}
 
 package:
   name: rb-{{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://rubygems.org/downloads/{{ name }}-{{ version }}.gem
-  sha256: 6e7e4fe5eae9593c29e5dd6c830b91530b92e044b3d3efa89898fca22a75119d
+  sha256: 3fea2409ee4a890f8c8ebc4fb6163fe2c58ef6be7b7a586c64b0fc924f8b7625
 
 build:
-  number: 1
+  number: 0
   script:
     - gem install -N -l -V --norc --ignore-dependencies {{ name }}-{{ version }}.gem
     - gem unpack {{ name }}-{{ version }}.gem
